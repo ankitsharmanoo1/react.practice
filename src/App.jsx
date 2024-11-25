@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const App = () => {
   
@@ -13,10 +13,15 @@ const App = () => {
        
        
    }
+   useEffect(() => {
+     getData()
+    
+   }, [])
+   
 
   return (
     <div className="p-10">
-       <button onClick={getData} className="bg-teal-700  text-white font-semibold text-2xl px-6 py-3  rounded active:scale-90">Get Data</button>
+       {/* <button onClick={getData} className="bg-teal-700  text-white font-semibold text-2xl px-6 py-3  rounded active:scale-90">Get Data</button> */}
        <div className="p-5 mt-5 bg-gray-950">
             {data.map(function(elem,idx){
                return <div key={idx} className="bg-gray-50 text-black flex items-center justify-between w-full px-7 py-6 rounded mb-3">
